@@ -63,7 +63,7 @@
 
 Ссылки на изображения можно брать в интернете, или воспользоваться заготовленным списком:   
 
-Устройства:  
+**Устройства**:  
 https://i.postimg.cc/cHCHDVPw/1.jpg  
 https://i.postimg.cc/sD7p9hYy/2.jpg  
 https://i.postimg.cc/9X4P0SzD/3.jpg  
@@ -74,7 +74,7 @@ https://i.postimg.cc/mg47dgj9/8.jpg
 https://i.postimg.cc/L5ZsSj9s/9.jpg  
 https://i.postimg.cc/K85BChpH/10.jpg
 
-Аватарки:  
+**Аватарки**:  
 https://i.postimg.cc/DzyLTpty/ava-1.jpg  
 https://i.postimg.cc/N0JTf7c8/ava-2.png  
 https://i.postimg.cc/QC5Wb2WS/ava-3.gif  
