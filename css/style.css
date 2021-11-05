@@ -1,7 +1,15 @@
-img{
+.carouselImage{
     background-size: cover;
 }
-
+#YotaImg{
+    width: 260px;
+    height: 260px;
+}
+.phonesImg{
+    /* width: 200px;
+    height: 150px; */
+    background-size: cover;
+}
 /* .carousel-indicators > li.active {
     background-color:  rgb(173, 0, 0);
 } */
