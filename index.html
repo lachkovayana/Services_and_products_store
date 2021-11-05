@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="h-100 d-flex flex-column">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-0">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-microchip"></i>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto p-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#top">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Contuct us</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <ul class="navbar-nav mr-auto p-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </span>
+      </div>
+    </nav>
+
+    <a name="top"></a>
+    <div class="container-fluid px-0">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active bg-primary"
+          ></li>
+          <li
+            data-target="#carouselExampleIndicators"
+            class="bg-primary"
+            data-slide-to="1"
+          ></li>
+          <li
+            data-target="#carouselExampleIndicators"
+            class="bg-primary"
+            data-slide-to="2"
+          ></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="Img/carousel-1.jpg"
+              alt="Первый слайд"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="Img/carousel-2.jpg"
+              alt="Второй слайд"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="Img/carousel-3.jpg"
+              alt="Третий слайд"
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <h1 class="text-primary">Best shop you can ever find!</h1>
+      <div class="card w-100 mx-auto shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+            <div class="row">
+          <div class="col-lg-4 col-md-6 order-lg-first my-2">
+            <button class="btn btn-primary mx-2 w-100">Send request 1</button>
+          </div>
+          <div class="col-lg-4 col-md-6 order-lg-last my-2" >
+            <button class="btn btn-primary mx-2 w-100">Send request 3</button>
+          </div>
+          <div class="col-lg-4 col-md-12 my-2">
+            <button class="btn btn-primary mx-2 w-100">Send request 2</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer font-small blue pt-4">
+      <div class="container">
+        <div class="row mx-0">
+          <div class="col-md-5 d-flex mx-0 mb-4 align-items-center">
+            <form class="form-inline row">
+              <label for="inputName" class="mr-2">Contact us</label>
+              <input
+                class="form-control form-control mr-3 w-70"
+                type="text"
+                placeholder="Name"
+                aria-label="Name"
+                id="inputName"
+              />
+            </form>
+          </div>
+          <div class="col-md-7 mb-4 d-flex align-items-center">
+            <form class="input-group row">
+              <input
+                type="text"
+                class="form-control col"
+                placeholder="Email@email.com"
+                aria-label="Email@email.com"
+                aria-describedby="basic-addon2"
+              />
+              <div class="input-group-append col">
+                <button class="btn btn-primary mx-2 w-100">Send request</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-copyright text-center py-3">
+          © 2020 Copyright:
+          <a href="https://hits.tsu.ru/"> HITs TSU</a>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
