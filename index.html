@@ -42,13 +42,19 @@
             <a class="nav-link" href="#top">Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Contuct us</a>
+            <a class="nav-link" href="#footer">Contact us</a>
           </li>
         </ul>
         <span class="navbar-text">
           <ul class="navbar-nav mr-auto p-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Register</a>
+              <a
+                class="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#exampleModal"
+                >Register</a
+              >
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Login</a>
@@ -198,7 +204,100 @@
                       </ul>
                     </li>
                   </ul>
+                </div>
+              </div>
+              <div class="card mt-3 mx-0">
+                <div class="card-body px-0">
+                  <img src="Img/9.jpg" class="phonesImg w-100 h-100" />
+                  <div class="row mx-0 mt-2">
+                    <span class="mx-3"><b>Motorolla</b></span>
                   </div>
+                  <div class="row mx-0 mt-2">
+                    <span class="mx-3"
+                      >You think you can break it? Try again</span
+                    >
+                  </div>
+                  <ul class="list-unstyled mx-3 mt-2 mb-0">
+                    <li>
+                      <ul class="list-inline">
+                        <li>
+                          <div class="row mx-0 d-flex justify-content-between">
+                            <div class="col align-items-center d-flex px-0">
+                              <button class="btn btn-primary mx-0">
+                                <i class="fas fa-plus"></i>
+                                Read more
+                              </button>
+                            </div>
+                            <div class="col text-right px-0">
+                              <div class="btn-group" role="group">
+                                <button
+                                  type="button"
+                                  class="btn btn-outline-warning editButton"
+                                  data-toggle="modal"
+                                  data-target="#exampleModal"
+                                  data-title=""
+                                  data-description=""
+                                >
+                                  <i class="fas fa-pen"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-outline-danger"
+                                >
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card mt-3 mx-0">
+                <div class="card-body px-0">
+                  <img src="Img/4.jpg" class="phonesImg w-100 h-100" />
+                  <div class="row mx-0 mt-2">
+                    <span class="mx-3"><b>Yet amother good phone</b></span>
+                  </div>
+                  <ul class="list-unstyled mx-3 mt-2 mb-0">
+                    <li>
+                      <ul class="list-inline">
+                        <li>
+                          <div class="row mx-0 d-flex justify-content-between">
+                            <div class="col align-items-center d-flex px-0">
+                              <button class="btn btn-primary mx-0">
+                                <i class="fas fa-plus"></i>
+                                Read more
+                              </button>
+                            </div>
+                            <div class="col text-right px-0">
+                              <div class="btn-group" role="group">
+                                <button
+                                  type="button"
+                                  class="btn btn-outline-warning editButton"
+                                  data-toggle="modal"
+                                  data-target="#exampleModal"
+                                  data-title=""
+                                  data-description=""
+                                >
+                                  <i class="fas fa-pen"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-outline-danger"
+                                >
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="col order-lg-last">
@@ -367,11 +466,170 @@
               </div>
             </div>
           </div>
+          <div class="row w-100 mx-0 justify-content-lg-end">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="col form-group">
+                  <label class="sr-only" for="inlineFormInputGroup"
+                    >Username</label
+                  >
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">@</div>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inlineFormInputGroup"
+                      placeholder="Username"
+                    />
+                  </div>
+                </div>
+                <div class="form-group col">
+                  <select id="inputState" class="form-control">
+                    <option selected disabled>Choose your gender</option>
+                    <option>м</option>
+                    <option>ж</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword4"
+                    placeholder="Password"
+                  />
+                </div>
+                <div class="form-group col">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail4"
+                    placeholder="Email"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword5"
+                    placeholder="Repeat password"
+                  />
+                </div>
+                <div class="form-group col">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Phone"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    id="inlineFormInput"
+                    placeholder="FullName"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="2"
+                    placeholder="Tell about yourself"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    id="path"
+                    placeholder="Path to avatar"
+                  />
+                </div>
+              </div>
+              <div class="form-row mx-0">
+              <div class="form-check ml-1">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  I agree with terms
+                </label>
+              </div>
+            </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="alert('Пользователь зарегестрирован')"
+            >
+              Register
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
     <footer class="page-footer font-small blue pt-4">
+      <a name="footer"></a>
       <div class="container">
         <div class="row mx-0">
           <div class="col-md-5 d-flex mx-0 mb-4 align-items-center">
