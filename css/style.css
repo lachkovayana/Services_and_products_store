@@ -3,10 +3,8 @@
 }
 
 #YotaImg {
-    background-size: cover;
-    width: fit-content;
-    max-width: 300px;
-    max-height: 260px;
+    max-width: 250px;
+    max-height: 250px;
 }
 
 .phonesImg {
@@ -43,4 +41,18 @@
 
 .container-fluid{
     margin-top:40px;
+}
+
+@media(max-width:575px){
+    .footer_form{
+        width: 350px;
+    }
+    .footer_form > input {
+        width: 100%;
+    }
+    /* #YotaImg {
+        max-width: 250px;
+        max-height: 210px;
+        margin-bottom: 20px;
+    } */
 }
