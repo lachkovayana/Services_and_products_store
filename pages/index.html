@@ -30,11 +30,7 @@
           <a class="nav-link" href="#footer">Contact us</a>
         </li>
       </ul>
-      <span class="navbar-text">
-        <ul class="navbar-nav mr-auto p-0 navbar_ul">
-
-        </ul>
-      </span>
+      <ul class="navbar-nav p-0 navbar_ul "></ul>
     </div>
   </nav>
 
@@ -124,7 +120,8 @@
                   <div class="col text-right px-0">
                     <div class="btn-group" role="group">
                       <button type="button" class="btn btn-warning editButton" data-toggle="modal"
-                        data-target="#editProduct" onclick="getEditProdModal(this)" data-title="" data-description="">
+                        data-target="#editProduct" onclick="getEditedProductModal(this)" data-title=""
+                        data-description="">
                         <i class="fas fa-pen"></i>
                       </button>
                       <button type="button" class="btn btn-danger btn-delete" onclick="deleteProduct(this)">
@@ -220,7 +217,8 @@
         </div>
 
         <div class="modal-body">
-          <form id="registerForm">
+          <form id="registerForm"
+            oninput='pass2.setCustomValidity(pass2.value != pass.value ? "Passwords do not match." : "")'>
             <div class="form-row">
 
               <div class="form-group col-md-6">
@@ -251,17 +249,16 @@
             <div class="form-row">
 
               <div class="form-group col-md-6">
-                <label class="sr-only" for="registerPassword">Password</label>
                 <div class="input-group mb-2">
-                  <input type="password" class="form-control" id="registerPassword" placeholder="Paypass" minlength="8"
-                    required>
+                  <input type="password" class="form-control" id="registerPassword" placeholder="Password" minlength="8"
+                    required name=pass>
                 </div>
               </div>
 
               <div class="form-group col-md-6">
-                <label class="sr-only" for="registerEmail">Email</label>
                 <div class="input-group mb-2">
-                  <input type="text" class="form-control" id="registerEmail" placeholder="aboba@example.com">
+                  <input type="password" class="form-control" id="registerRepeatPassword" placeholder="Repeat password"
+                    required name=pass2>
                 </div>
               </div>
 
@@ -270,16 +267,12 @@
             <div class="form-row">
 
               <div class="form-group col-md-6">
-                <label class="sr-only" for="registerRepeatPassword">Repeat password</label>
                 <div class="input-group mb-2">
-                  <input type="password" class="form-control" id="registerRepeatPassword" placeholder="Repeat password"
-                    required>
+                  <input type="text" class="form-control" id="registerEmail" placeholder="aboba@example.com">
                 </div>
-
               </div>
 
               <div class="form-group col-md-6">
-                <label class="sr-only" for="registerPhone">Phone</label>
                 <div class="input-group mb-2">
                   <input type="text" class="form-control" placeholder="Phone">
                 </div>
@@ -289,9 +282,7 @@
 
             <div class="form-row">
               <div class="form-group col">
-                <label class="sr-only" for="registerDescription">Tell about yourself</label>
                 <div class="input-group mb-2">
-                  <!---там input - тут textarea-->
                   <textarea class="form-control" id="registerDescription" placeholder="Tell about yourself"></textarea>
                 </div>
               </div>
@@ -299,9 +290,8 @@
 
             <div class="form-row">
               <div class="form-group col">
-                <label class="sr-only" for="registerAvatar">Path to avatar</label>
                 <div class="input-group mb-2">
-                  <input type="text" class="form-control" id="registerAvatar" placeholder="Path to avatar">
+                  <input type="text" class="form-control" id="registerAvatar" placeholder="URL to avatar">
                 </div>
               </div>
             </div>
@@ -314,8 +304,6 @@
                 </label>
               </div>
             </div>
-
-            <p class="d-none text-danger w-100 text-center mt-0 message">Try again, please</p>
 
             <div class="modal-footer">
               <button type="reset" id="cleanBtn" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -346,18 +334,18 @@
           <form id="authForm">
             <div class="form-row">
               <div class="form-group col">
-                <label for="loginUsername">Your username</label>
                 <div class="input-group mb-2">
-                  <input type="text" class="form-control" id="loginUsername" placeholder="Username" minlength="8" required>
+                  <input type="text" class="form-control" id="loginUsername" placeholder="Username" minlength="8"
+                    required>
                 </div>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col">
-                <label for="loginPassword">Your password</label>
                 <div class="input-group mb-2">
-                  <input type="password" class="form-control" id="loginPassword" placeholder="Password"  minlength="8" required>
+                  <input type="password" class="form-control" id="loginPassword" placeholder="Password" minlength="8"
+                    required>
                 </div>
               </div>
             </div>
