@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"/>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css">
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 
@@ -229,7 +230,8 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">@</div>
                   </div>
-                  <input type="text" class="form-control" id="registerUsername" placeholder="Username" minlength="8" required>
+                  <input type="text" class="form-control" id="registerUsername" placeholder="Username" minlength="8"
+                    required>
                 </div>
 
               </div>
@@ -237,7 +239,7 @@
               <div class="form-group col-md-6">
                 <label class="sr-only" for="inputState"></label>
 
-                <select id="registerGender" class="form-control" >
+                <select id="registerGender" class="form-control">
                   <option selected disabled>Choose your gender</option>
                   <option>Male</option>
                   <option>Female</option>
@@ -251,7 +253,8 @@
               <div class="form-group col-md-6">
                 <label class="sr-only" for="registerPassword">Password</label>
                 <div class="input-group mb-2">
-                  <input type="password" class="form-control" id="registerPassword" placeholder="Paypass" minlength="8" required>
+                  <input type="password" class="form-control" id="registerPassword" placeholder="Paypass" minlength="8"
+                    required>
                 </div>
               </div>
 
@@ -345,7 +348,7 @@
               <div class="form-group col">
                 <label for="loginUsername">Your username</label>
                 <div class="input-group mb-2">
-                  <input type="text" class="form-control" id="loginUsername" placeholder="Username" required>
+                  <input type="text" class="form-control" id="loginUsername" placeholder="Username" minlength="8" required>
                 </div>
               </div>
             </div>
@@ -354,15 +357,13 @@
               <div class="form-group col">
                 <label for="loginPassword">Your password</label>
                 <div class="input-group mb-2">
-                  <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                  <input type="password" class="form-control" id="loginPassword" placeholder="Password"  minlength="8" required>
                 </div>
               </div>
             </div>
-            <p class="d-none text-danger w-100 text-center mt-0 message"></p>
-            <div class="container">
-              <div class="row justify-content-center">
-                <button type="submit" id="loginSubmit" class="submit-alert btn btn-primary col">Submit</button>
-              </div>
+            <p class="d-none text-danger w-100 text-center mt-0 message">No such user in system</p>
+            <div class="contaner justify-content-center">
+              <button type="submit" id="loginSubmit" class="submit-alert btn btn-primary col">Submit</button>
             </div>
           </form>
         </div>
@@ -808,13 +809,13 @@
                     </div>
                     <div class="commentsText">
                       Lorem Ipsum is simply dummy text of the pr make but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                        software like Aldus PageMaker including versions of Lorem Ipsum.
-                        <span class="btn px-0 py-0 mb-1 text-primary replyButton">
-                          Reply
-                        </span>
-                      
+                      remaining essentially unchanged. It was popularised in the 1960s with the release of
+                      Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                      software like Aldus PageMaker including versions of Lorem Ipsum.
+                      <span class="btn px-0 py-0 mb-1 text-primary replyButton">
+                        Reply
+                      </span>
+
                     </div>
                   </div>
                 </div>

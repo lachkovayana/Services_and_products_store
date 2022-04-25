@@ -14,18 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     updateInfoOnPage()
 
     $('#registerForm').submit(function (event) {
-        event.preventDefault();
+        event.preventDefault()
         if ($(this)[0].checkValidity() === false) {
-            event.stopPropagation();
+            event.stopPropagation()
         } else {
-            registerNewUser();
+            registerNewUser()
         }
-    });
+    })
 
     $('#authForm').submit(function (event) {
-        event.preventDefault();
+        event.preventDefault()
         if ($(this)[0].checkValidity() === false) {
-            event.stopPropagation();
+            event.stopPropagation()
         } else {
             let userInfo = {
                 username: $('#authForm').find($("#loginUsername")).val(),
@@ -35,25 +35,25 @@ document.addEventListener("DOMContentLoaded", () => {
             signIn(userInfo)
 
         }
-    });
+    })
 
     $('#editServiceForm').submit(function (event) {
-        event.preventDefault();
+        event.preventDefault()
         if ($(this)[0].checkValidity() === false) {
-            event.stopPropagation();
+            event.stopPropagation()
         } else {
-            saveEditedService();
+            saveEditedService()
         }
-    });
+    })
 
     $('#editProductForm').submit(function (event) {
-        event.preventDefault();
+        event.preventDefault()
         if ($(this)[0].checkValidity() === false) {
-            event.stopPropagation();
+            event.stopPropagation()
         } else {
-            saveEditedProduct();
+            saveEditedProduct()
         }
-    });
+    })
 
     $("#saveProdBtn").on("click", addNewProduct)
     $("#saveServBtn").on("click", addNewService)
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .find('select>option:eq(0)').prop('selected', true)
             .end()
             .find('input[type=checkbox]').prop('checked', false)
-            .end();
+            .end()
     })
 
     $('#authModal').on('hidden.bs.modal', function () {
@@ -82,28 +82,28 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 })
 
-
-
 function clearForm() {
     $(this)
         .find("input, textarea")
         .val('')
         .end()
+    $(this).find(".message").addClass("d-none")
 }
 
 function signIn(userInfo) {
     postRequest(authURL, userInfo)
         .then((response) => response.json())
         .then(data => {
-            let msg = $(this).find('.message')
-            if (data.accessToken) {
+            console.log(data)
+            let msg = $("#authForm").find('.message')
+            if (data.status == 200) {
                 localStorage.setItem("token", data.accessToken);
                 updateInfoOnPage()
                 $('#authModal').modal('hide')
 
                 if (!(msg.hasClass("d-none")))
                     msg.addClass("d-none")
-                clearForm.call(this)
+                clearForm.call($("#authForm"))
             }
             else {
                 msg.removeClass("d-none")
@@ -114,7 +114,7 @@ function signIn(userInfo) {
 }
 
 function updateInfoOnPage() {
-    $(".navbar_ul").empty();
+    $(".navbar_ul").empty()
     if (localStorage.getItem("token")) {
         loadProducts()
         loadServices()
@@ -123,8 +123,8 @@ function updateInfoOnPage() {
         )
     }
     else {
-        $("#productSpace").empty();
-        $("#serviceSpace").empty();
+        $("#productSpace").empty()
+        $("#serviceSpace").empty()
         $(".navbar_ul").append(
             '<li class="nav-item active"><a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>'
         )
@@ -161,7 +161,7 @@ function registerNewUser() {
 function loadServices() {
     getRequest(allServicesURL)
         .then((json) => {
-            $("#serviceSpace").empty();
+            $("#serviceSpace").empty()
 
             let $service = $("#serviceCard")
 
@@ -185,8 +185,8 @@ function loadProducts() {
 
     getRequest(allProductsURL)
         .then((json) => {
-            console.log(json);
-            $("#productSpace").empty();
+            console.log(json)
+            $("#productSpace").empty()
 
             let $product = $("#productCard")
 
@@ -246,24 +246,24 @@ function addNewService(id) {
 
 }
 function addNewComment() {
-    let prodNum = $("#sendComment").data("num");
-    let commentId = $("#sendComment").data("commentId");
-    let isReply = $("#sendComment").data("isReply");
-    let data, url;
+    let prodNum = $("#sendComment").data("num")
+    let commentId = $("#sendComment").data("commentId")
+    let isReply = $("#sendComment").data("isReply")
+    let data, url
 
     if (isReply) {
         data = {
             "parentCommentId": parseInt(commentId),
             "message": $("#newCommentText").val()
         }
-        url = replyURL;
+        url = replyURL
     }
     else {
         data = {
             "productId": parseInt(prodNum),
             "message": $("#newCommentText").val()
         }
-        url = addProdCommURL;
+        url = addProdCommURL
     }
     postWithAuthRequest(url, data)
         .then(() => {
@@ -275,16 +275,16 @@ function addNewComment() {
 }
 
 window.replyComment = function replyComment(btn) {
-    let commentId = btn.getAttribute("data-id");
-    let username = btn.getAttribute("data-name");
+    let commentId = btn.getAttribute("data-id")
+    let username = btn.getAttribute("data-name")
     $("#sendComment").data("commentId", commentId)
     $("#sendComment").data("isReply", true)
-    $("#newCommentText").text(username + ", ");
+    $("#newCommentText").text(username + ", ")
 }
 
 window.logOut = function logOut() {
-    localStorage.removeItem("token");
-    updateInfoOnPage();
+    localStorage.removeItem("token")
+    updateInfoOnPage()
 }
 
 window.deleteProduct = function deleteProduct(prod) {
@@ -292,7 +292,7 @@ window.deleteProduct = function deleteProduct(prod) {
     let data = { id: productNum }
     deleteRequest(productURL + "/" + productNum, data)
         .then((data) => loadProducts())
-        .catch((error) => console.error(error));
+        .catch((error) => console.error(error))
 }
 
 window.deleteService = function deleteService(service) {
@@ -301,14 +301,14 @@ window.deleteService = function deleteService(service) {
 
     deleteRequest(serviceURL + serviceNum, data)
         .then(() => loadServices())
-        .catch((error) => console.error(error));
+        .catch((error) => console.error(error))
 }
 
 window.editService = function editService(service) {
     let serviceNum = service.getAttribute("data-num")
     getRequest(allServicesURL)
         .then((data) => {
-            let elem = data.filter((elem) => elem.id == serviceNum)[0];
+            let elem = data.filter((elem) => elem.id == serviceNum)[0]
             $("#editServiceBtn").data("num", serviceNum)
             $("#editServiceDescr").val(elem.description)
             $("#editServiceName").val(elem.name)
@@ -352,14 +352,14 @@ window.getReadmoreModal = function getReadmoreModal(prod) {
             let $templateLi = $(".li-carousel-template")
 
             data.photoPaths.forEach(element => {
-                let $phoneImg = $templatePhone.clone();
-                let $li = $templateLi.clone();
+                let $phoneImg = $templatePhone.clone()
+                let $li = $templateLi.clone()
                 $phoneImg.removeClass("d-none")
                 $li.removeClass("d-none")
                 $phoneImg.find("img").attr("src", element)
                 $("#phonesCarouselSpace").append($phoneImg)
                 $("#carouselOlSpace").append($li)
-            });
+            })
 
             $("#phonesCarouselSpace").find("div").first().addClass("active")
             $("#carouselOlSpace").find("li").first().addClass("active")
@@ -371,13 +371,13 @@ function loadComments(prodNum) {
 
     getRequest(productURL + "/" + prodNum + "/getcomments")
         .then((data) => {
-            console.log(data);
+            console.log(data)
 
             $("#productCommentsSpace").empty()
 
             let $templateComment = $(".comment-template")
             data.forEach((element) => {
-                let $comment = $templateComment.clone();
+                let $comment = $templateComment.clone()
                 $comment.removeClass("d-none")
                 $comment.find(".avatarPhoto").attr("src", element.userPhotoPath)
                 $comment.find(".commentText").text(element.message)
@@ -386,8 +386,8 @@ function loadComments(prodNum) {
                 $comment.find(".commentReply").attr("data-name", element.username)
 
                 element.replies.map((oneReply) => {
-                    console.log(oneReply);
-                    let $reply = $templateComment.clone();
+                    console.log(oneReply)
+                    let $reply = $templateComment.clone()
                     $reply.removeClass("d-none")
                     $reply.addClass("ml-5")
                     $reply.find(".avatarPhoto").attr("src", oneReply.userPhotoPath)
@@ -421,7 +421,10 @@ function saveEditedService() {
         "description": $("#editServiceDescr").val()
     }
     postWithAuthRequest(serviceURL, newData)
-        .then(() => { loadServices(); $('#editService').modal('hide') })
+        .then(() => {
+            loadServices()
+            $('#editService').modal('hide')
+        })
         .catch((error) => { console.log(error) })
 }
 
@@ -439,7 +442,10 @@ function saveEditedProduct() {
 
     }
     postWithAuthRequest(productURL, newData)
-        .then(() => { loadProducts(); $('#editProduct').modal('hide') })
+        .then(() => {
+            loadProducts()
+            $('#editProduct').modal('hide')
+        })
         .catch((error) => { console.log(error) })
 
 }
