@@ -28,6 +28,9 @@ export function addNewComment() {
     postWithAuthRequest(url, data)
         .then(() => {
             loadComments(prodNum)
+            $("#sendComment").removeData("isReply")
+            $("#sendComment").removeData("commentId")
+
             $("#newCommentText").val("")
         })
         .catch(error => console.error(error))
@@ -38,7 +41,6 @@ export function loadComments(prodNum) {
 
     getRequest(productURL + "/" + prodNum + "/getcomments")
         .then((data) => {
-            console.log(data)
 
             $("#productCommentsSpace").empty()
 
@@ -53,7 +55,6 @@ export function loadComments(prodNum) {
                 $comment.find(".commentReply").attr("data-name", element.username)
 
                 element.replies.map((oneReply) => {
-                    console.log(oneReply)
                     let $reply = $templateComment.clone()
                     $reply.removeClass("d-none")
                     $reply.addClass("ml-5")
@@ -74,7 +75,8 @@ export function loadComments(prodNum) {
 window.replyComment = function replyComment(btn) {
     let commentId = btn.getAttribute("data-id")
     let username = btn.getAttribute("data-name")
+    console.log(btn)
     $("#sendComment").data("commentId", commentId)
     $("#sendComment").data("isReply", true)
-    $("#newCommentText").text(username + ", ")
+    $("#newCommentText").val(username + ", ")
 }

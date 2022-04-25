@@ -20,7 +20,7 @@
 
 .avatarPhoto {
     width: 80px;
-    height: 80px;
+    max-height: 80px;
 }
 
 .service-card-template:hover {
