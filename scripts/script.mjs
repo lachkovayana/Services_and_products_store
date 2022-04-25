@@ -96,7 +96,7 @@ function signIn(userInfo) {
         .then(data => {
             console.log(data)
             let msg = $("#authForm").find('.message')
-            if (data.status == 200) {
+            if (data.accessToken) {
                 localStorage.setItem("token", data.accessToken);
                 updateInfoOnPage()
                 $('#authModal').modal('hide')
