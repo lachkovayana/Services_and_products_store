@@ -2,7 +2,7 @@ import { postRequest } from "./requests.mjs"
 import { signIn } from "./login.mjs"
 
 const mainURL = "https://midterm2.front.kreosoft.space/api"
-const authURL = mainURL + "/auth"
+const registerURL = mainURL + "/auth/register"
 
 
 export function registerNewUser() {

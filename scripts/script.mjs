@@ -1,6 +1,7 @@
 import { addNewComment } from "./comments.mjs"
 import { addNewProduct, loadProducts, saveEditedProduct } from "./products.mjs"
 import { addNewService, loadServices, saveEditedService } from "./services.mjs"
+import { registerNewUser } from "./register.mjs"
 import { signIn } from "./login.mjs"
 
 document.addEventListener("DOMContentLoaded", () => {

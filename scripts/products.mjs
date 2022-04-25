@@ -5,6 +5,7 @@ const productURL = mainURL + "/Product"
 const allProductsURL = productURL+ "/getall"
 
 export function addNewProduct() {
+    
     let product = {
         id: null,
         name: $("#productNameModal").val(),
@@ -19,8 +20,8 @@ export function addNewProduct() {
 
     postWithAuthRequest(mainURL + "/Product", product)
         .then(() => {
+            $('#addProductModal').modal('hide')
             loadProducts()
-            $('#addProduct').modal('hide')
         })
         .catch(error => console.error(error))
 }
@@ -29,12 +30,9 @@ export function loadProducts() {
 
     getRequest(allProductsURL)
         .then((json) => {
-            console.log(json)
             $("#productSpace").empty()
-
             let $product = $("#productCard")
-
-            for (var card of json) {
+            for (let card of json) {
 
                 let $cardClone = $product.clone()
                 $cardClone = $("#productCard").clone()
@@ -42,7 +40,11 @@ export function loadProducts() {
 
                 $cardClone.find(".productImg").attr("src", card.mainPhotoPath)
                 $cardClone.find(".productName").text(card.name)
-                $cardClone.find(".productDescription").text(card.description)
+                $cardClone.find(".productDescription").val("")
+                card.description.split('\n').forEach(element => {
+                    $cardClone.find(".productDescription").append(element + "<br>")
+                });
+                // $cardClone.find(".productDescription").text(card.description)
                 $cardClone.find(".btn-delete").attr("data-num", card.id)
                 $cardClone.attr("id", "productCard-" + card.id)
                 $cardClone.find(".editButton").attr("data-num", card.id)
@@ -93,7 +95,11 @@ window.getEditedProductModal = function getEditedProductModal(prod) {
             $("#editProductWidthModal").val(data.width)
             $("#editProductHeightModal").val(data.height)
             $("#editProductWeightModal").val(data.weight)
-            $("#editProductDescriptionModal").val(data.description)
+            $("#editProductDescriptionModal").text("")
+            // $("#editProductDescriptionModal").val(data.description)
+            data.description.split('\n').forEach(element => {
+                $("#editProductDescriptionModal").append(element +"\n")
+            });
             $("#editProductPhotoPathModal").val(data.photoPaths.map((el) => el).join(","))
         })
 }
@@ -108,7 +114,11 @@ window.getReadmoreModal = function getReadmoreModal(prod) {
     getRequest(productURL + "/" + prodNum)
         .then((data) => {
             $(".modalProductName").text(data.name)
-            $(".modalProductDesciption").text(data.description)
+            $(".modalProductDescription").text("")
+            data.description.split('\n').forEach(element => {
+                $(".modalProductDescription").append(element + "<br>")
+            });
+            // $(".modalProductDescription").text(data.description)
             $(".modalProductWidth").text(data.width)
             $(".modalProductHeight").text(data.height)
             $(".modalProductWeight").text(data.weight)
