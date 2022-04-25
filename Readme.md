@@ -1,4 +1,10 @@
-<h2>Website selling services and products using Bootstrap 4 and Fetch API</h2>
+<h2>Website selling services and products using Bootstrap and Fetch API</h2>
+
+<b>Test account:</b> 
+
+_Login_: User2002
+
+_Password_: 12345678
 
 ![image](https://user-images.githubusercontent.com/45456220/165165525-2a06381e-9f05-46db-b775-d51d2b5b3327.png)
 
