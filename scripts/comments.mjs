@@ -75,7 +75,6 @@ export function loadComments(prodNum) {
 window.replyComment = function replyComment(btn) {
     let commentId = btn.getAttribute("data-id")
     let username = btn.getAttribute("data-name")
-    console.log(btn)
     $("#sendComment").data("commentId", commentId)
     $("#sendComment").data("isReply", true)
     $("#newCommentText").val(username + ", ")
